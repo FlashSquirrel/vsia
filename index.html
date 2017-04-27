@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vsia管理平台</title>
+    <link rel="stylesheet" type="text/css" href="../index.css">
+    <script src="../jquery.js"></script>
+</head>
+<body>
+<h2>vsia项目管理平台</h2>
+<!--<button id="add">新增服务</button>-->
+
+<!-- 新增内容的弹出层代码-->
+
+<div class="add">
+    <input type="file" name="file" placeholder="读取文件"/>
+    <button id="addOne">添加</button>
+</div>
+<div id="vsia">
+    <ul>
+        <li><input type="checkbox" class="testOne"></li>
+        <li>名称</li>
+        <li>路径</li>
+        <li>运行状态</li>
+        <li>CPU</li>
+        <li>内存</li>
+        <li>操作</li>
+    </ul>
+</div>
+<div class="bottom-btn"><button id="deleteAll">删除所选</button><button id="startAll">开启所选</button><button id="stopAll">停止所选</button></div>
+
+
+</body>
+<script src="../app.js" ></script>
+</html>

@@ -1,0 +1,27 @@
+{
+  "main": "index.html",
+  "name": "vsia项目管理平台",
+  "nodejs": true,
+  "version": "0.1.0",
+  "window": {
+    "title": "vsia项目管理平台",
+    "toolbar": true,
+    "frame": true,
+    "width": 800,
+    "height": 480,
+    "position": "center",
+    "min_width": 1000,
+    "min_height": 480,
+    "max_width": 0,
+    "max_height": 0,
+    "show_in_taskbar": true,
+    "resizable": true,
+    "kiosk": false
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "dependencies": {
+    "promise": "^7.1.1"
+  }
+}
