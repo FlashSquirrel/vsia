@@ -40,6 +40,18 @@ Agent.prototype = {
             if(!result){
                 console.info("数据不存在");
             }
+            //需要进行遍历其中的数据。进行动态设定上去。主要是防止设定选中状态而被取消掉了。。
+            var list = vm.list;
+            for(var i in result){
+                var newObj = result[i];
+                for(var k in list){
+                    var oldObj = list[k];
+                    if(oldObj.name == newObj.name){
+                        newObj.flag = oldObj.flag;
+                        break;
+                    }
+                }
+            }
             vm.list = result;
         });
     },
@@ -64,7 +76,6 @@ Agent.prototype = {
         var self = this;
         this.ev.on("doSaveFinish",function(err,result){
             self.ev.removeAllListeners("doSaveFinish");
-            alert(err);
             if(!err){
                 //表明能够正常保存了。需要进行同步进行处理了
                 self.findList(vm);
@@ -82,14 +93,15 @@ Agent.prototype = {
         const self =this;
         this.god.delCache(name);
         this.ev.on("delCacheFinish",(err,result)=>{
-            self.removeAllListeners("delCacheFinish");
+            self.ev.removeAllListeners("delCacheFinish");
            if(err){
                alert(err);
                return;
            }else{
                alert("删除成功");
-           } 
-        });
+           }
+
+    })
     }
 };
 

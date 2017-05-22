@@ -153,7 +153,6 @@ class God{
      * @param obj 具体开启的任务对象格式为{name: '',filePath: ''}
      */
     doSave(obj){
-
         this.ev.emit(this.attrs.START,{
             name: obj.name,
             script: obj.filePath,
@@ -161,7 +160,7 @@ class God{
             logDateFormat: 'YYYY-MM-DD HH:mm:ss'
         });
         this.ev.on(this.attrs.START+"Finish",(err,result)=>{
-            this.ev.removeAllListeners(this.attrs.START+"Finish")
+            this.ev.removeAllListeners(this.attrs.START+"Finish");
             this.ev.emit("doSaveFinish",err,result);
         });
         //获取对应文件大小。设定创建时间
@@ -195,7 +194,7 @@ class God{
         this.ev.emit(this.attrs.DELETE,name);
         this.ev.on(this.attrs.DELETE+"Finish",(err,result)=>{
             this.ev.removeAllListeners(this.attrs.DELETE+"Finish")
-            this.ev.emit("delCache",err,result);
+            this.ev.emit("delCacheFinish",err,result);
         });
 
     }

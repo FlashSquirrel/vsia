@@ -41,7 +41,7 @@
         '<td width="100px">{{sys.mem}}</td>' +
         '<td>{{sys.fileName}}</td>' +
         '<td width="100px">{{sys.fileSize}}</td>' +
-        '<td width="100px" class="opear-con"><a class="glyphicon glyphicon-edit"></a><a class="glyphicon glyphicon-minus"></a></td>' +
+        '<td width="100px" class="opear-con"><a class="glyphicon glyphicon-edit"></a><a class="glyphicon glyphicon-minus" v-on:click="del(sys.name)"></a></td>' +
         '</tr>' +
         '</table></div>' +
         '</div> ' +
@@ -80,6 +80,7 @@
                    yes: function (index, layero) {
                        //表明对应点击的确定按钮 
                        self.doSave({name: $("#name").val(),filePath: $("#filePath").val()});
+                       $('#sysAdd').hide();
                        layer.close(index);
                        //layero.close();
                    }
@@ -103,7 +104,22 @@
              * @param name
              */
            del: function(name){
+                if(!name){
+                    var list = this.list;
+                    for(var i in list){
+                        var obj = list[i];
+                        if(obj.flag){
+                            //表明进行删除的数据;
+                            //TODO 此处暂时只支持一个选择进行删除动作
+                            name = obj.name;
+                        }
+                    }
+                }
 
+                if(!name){
+                    alert("尚未选择对一个项目,请选择一个或者多个项目进行删除");
+                    return;
+                }
                 if(window.confirm("确定要移除该程序?")){
                     //表明开始开启删除动作
                     for(var i in this.list){
@@ -115,6 +131,7 @@
                     }
                     //删除缓存中对应数据。以及同步数据库文件
                     this.agent.delCache(name);
+                    
 
                 }
 
