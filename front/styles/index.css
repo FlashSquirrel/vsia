@@ -1,0 +1,77 @@
+html body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+
+
+.panel-body {
+    height: calc(100% - 82px);
+
+}
+.tools{
+    float: right;
+    margin-top: -20px;
+}
+.caption{
+    width: 50%;
+}
+
+.tools a {
+    color: #fff;
+    margin-right: 30px;
+}
+.table {
+    margin-bottom: 0px;
+}
+
+
+.div-con{
+  height: calc(100% - 40px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+table th{
+    height: 30px;
+    line-height: 30px;
+    background-color: #D8E8F7;
+}
+
+
+
+table tr{
+    height: 30px;
+    line-height: 30px;
+}
+
+table tr th{
+    border: 1px solid #96C5DE;
+    text-align: center;
+}
+table tr td{
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+
+.opear-con a{
+    margin-left: 15px;
+}
+
+.add-label{
+    width: 75px;
+}
+
+.add-input{
+    width: calc(100% - 75px);
+    float: right;
+}
+
+.form-group{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+
+}
+
