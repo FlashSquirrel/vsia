@@ -1,27 +1,29 @@
 {
+  "name": "phusis",
+  "version": "0.0.1",
+  "description": "想妈妈桌面程序管理",
+  "scripts": {
+    "run": "nw .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "liyangli",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.18.1",
+    "pm2": "^2.4.6"
+  },
   "main": "index.html",
-  "name": "vsia项目管理平台",
-  "nodejs": true,
-  "version": "0.1.0",
   "window": {
-    "title": "vsia项目管理平台",
+    "title": "项目管理",
     "toolbar": true,
     "frame": true,
-    "width": 800,
-    "height": 480,
-    "position": "center",
-    "min_width": 1000,
-    "min_height": 480,
-    "max_width": 0,
-    "max_height": 0,
-    "show_in_taskbar": true,
+    "show": true,
+    "width": 1000,
+    "height": 500,
     "resizable": true,
-    "kiosk": false
+    "positoin": "center"
   },
   "webkit": {
     "plugin": true
-  },
-  "dependencies": {
-    "promise": "^7.1.1"
   }
 }
